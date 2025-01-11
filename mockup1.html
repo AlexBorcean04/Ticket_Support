@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: #00468b;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #00468b, #00aaff);
+            color: #fff;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            color: #fff;
+        }
+        .hero button {
+            background: #fff;
+            color: #00468b;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        .hero button:hover {
+            background-color: #f4f4f4;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px;
+            background: #fff;
+            flex-wrap: wrap;
+        }
+        .feature {
+            text-align: center;
+            max-width: 30%;
+            margin: 20px;
+        }
+        .feature h3 {
+            color: #00468b;
+        }
+        .feature i {
+            font-size: 2em;
+            color: #00aaff;
+            margin-bottom: 10px;
+        }
+        .cta {
+            text-align: center;
+            padding: 40px;
+            background: #00468b;
+            color: #fff;
+        }
+        .cta form {
+            margin-top: 20px;
+        }
+        .cta input, .cta select, .cta button {
+            padding: 10px;
+            font-size: 1em;
+            margin: 5px 0;
+            width: 80%;
+            border-radius: 5px;
+        }
+        .cta input, .cta select {
+            border: 1px solid #ccc;
+        }
+        .cta button {
+            background: #00aaff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .cta button:hover {
+            background-color: #0080cc;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #00468b;
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column;
+                text-align: center;
+            }
+            .feature {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>University Logo</div>
+        <nav>
+            <a href="#">About Us</a>
+            <a href="#">How It Works</a>
+            <a href="#">FAQs</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Simplify Your Student Life with [App Name]</h1>
+        <p>Submit tickets, find answers, and resolve issues with ease – all in one app.</p>
+        <button id="cta-main">Get Started Now</button>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <i class="fas fa-ticket-alt"></i>
+            <h3>Submit a Ticket</h3>
+            <p>Resolve your issues in just a few clicks.</p>
+            <button id="cta-ticket">Learn More</button>
+        </div>
+        <div class="feature">
+            <i class="fas fa-question-circle"></i>
+            <h3>View FAQs</h3>
+            <p>Access answers to common student questions instantly.</p>
+            <button id="cta-faq">Browse FAQs</button>
+        </div>
+        <div class="feature">
+            <i class="fas fa-tasks"></i>
+            <h3>Track Your Tickets</h3>
+            <p>Stay updated on the status of your requests.</p>
+            <button id="cta-track">View My Tickets</button>
+        </div>
+    </div>
+
+    <div class="cta">
+        <h2>Don’t Miss Out – Be the First to Experience [App Name]</h2>
+        <form id="sign-up-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <select required>
+                <option value="">What problem are you trying to solve?</option>
+                <option value="Scholarships">Scholarships</option>
+                <option value="Course Issues">Course Issues</option>
+                <option value="Teacher Problems">Teacher Problems</option>
+            </select>
+            <button type="submit">Sign Up for Early Access</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 University App. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Google Analytics tracking snippet
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'YOUR_TRACKING_ID', 'auto');
+        ga('send', 'pageview');
+
+        // Button tracking
+        document.getElementById('cta-main').addEventListener('click', function() {
+            ga('send', 'event', 'CTA', 'click', 'Get Started Now');
+        });
+
+        document.getElementById('cta-ticket').addEventListener('click', function() {
+            ga('send', 'event', 'Feature', 'click', 'Submit a Ticket');
+        });
+
+        document.getElementById('cta-faq').addEventListener('click', function() {
+            ga('send', 'event', 'Feature', 'click', 'View FAQs');
+        });
+
+        document.getElementById('cta-track').addEventListener('click', function() {
+            ga('send', 'event', 'Feature', 'click', 'Track Your Tickets');
+        });
+
+        // Form submission tracking
+        document.getElementById('sign-up-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent actual submission
+            ga('send', 'event', 'Form', 'submit', 'Sign Up for Early Access');
+            alert('Thank you for signing up!'); // Temporary feedback for users
+        });
+    </script>
+</body>
+</html>
